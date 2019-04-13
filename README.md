@@ -1,7 +1,30 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 
-### How to get here from zero?
+## TODO
+
+1. Firestore REST API Auth
+    1. [Generate `custom token`](https://firebase.google.com/docs/auth/admin/create-custom-tokens)
+        * NOTES:
+            * "Custom tokens are signed JWTs where the private key used for signing belongs to a Google service account."
+            * [`Custom token` expiration](https://stackoverflow.com/a/38354518)
+        * TODO: Can we use GCF without credit card?
+        * Alternative #1: Use glitch (or other free hosting) to generate `custom tokens`
+            * [Learn how to use Glitch for hosting](https://anidiots.guide/other-guides/hosting-on-glitch)
+            * [Use service account JSON file](https://firebase.google.com/docs/auth/admin/create-custom-tokens#using_a_service_account_json_file)
+            * 
+        * Alternative #2: Use `Google Cloud Function` to generate `custom tokens`
+            * [Learn GCF](https://cloud.google.com/functions/docs/tutorials/http)
+            * [Grant permissions](https://firebase.google.com/docs/auth/admin/create-custom-tokens#iam_api_not_enabled)
+            * [Write the code](https://firebase.google.com/docs/auth/admin/create-custom-tokens#letting_the_admin_sdk_discover_a_service_account)
+        * Request token from GCF
+    1. Use `custom token`  to [generate a `Firebase ID token` using the Firebase Authentication REST API](https://firebase.google.com/docs/reference/rest/auth/)
+        * NOTE: `Firebase ID token` does not expire automatically.
+    1. [In every request, send `Firebase ID token` to the Cloud Firestore endpoints as an Authorization header set to Bearer {YOUR_TOKEN}](https://firebase.google.com/docs/firestore/use-rest-api#authenticating_with_an_access_token)
+    1. [Refresh when necessary](https://firebase.google.com/docs/reference/rest/auth/#section-refresh-token)
+    
+
+## Main steps to setup the application skeleton
 
 1. Get started
     1. `$ npx create-react-app my-app`
