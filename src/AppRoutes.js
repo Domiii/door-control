@@ -80,7 +80,7 @@ export default function AppRoutes() {
       <UserRoute exact path="/devices" Comp={DevicePage} />
       <AdminRoute exact path="/users" Comp={UserPage} />
 
-      <Route Comp={NotFound404} />
+      <Route component={NotFound404} />
     </Switch>
   );
 }
