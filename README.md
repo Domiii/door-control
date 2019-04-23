@@ -90,3 +90,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Firestore REST
 * Docs: https://firebase.google.com/docs/firestore/use-rest-api
 * Example: https://firestore.googleapis.com/v1/projects/iot-fun-a9915/databases/(default)/documents/usersPublic
+* REST Api Explorer: https://developers.google.com/apis-explorer/#search/firestore/firestore/v1/
